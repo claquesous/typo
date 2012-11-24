@@ -422,7 +422,7 @@ def merge_with(merge_id)
       c.content = self
       c.save
     end
-    body = body + merge_article.body
+    self.body += merge_article.body
     merge_article.destroy
     save!
   end
