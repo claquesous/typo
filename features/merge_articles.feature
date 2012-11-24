@@ -5,12 +5,12 @@ Feature: Merge Articles
 
   Background:
     Given the blog is set up
+    And I am logged into the admin panel
     And an article "Platypus" has content "The platypus is cool!"
     And an article "Australian Monsters!" has content "I just saw a monster!"
-    And I am logged into the admin panel
 
   Scenario: Merged articles contain content from feeder articles
-    Given I am on the article "Platypus"
+    Given I am on the edit page for article "Platypus"
     When I fill in "Article ID" with the id for "Australian Monsters!"
     And I press "Merge"
     Then I should be on the "Platypus" page
