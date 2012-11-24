@@ -115,9 +115,11 @@ class Admin::ContentController < Admin::BaseController
 
   def merge
     @article = Article.find(params[:id])
-    if @article.merge_with(params[:merge_with])
+    merge_article = Article.find(params[:merge_with])
+    unless merge_article.nil?
+      @article.merge_with(merge_article)
       flash[:notice] = "Merged articles."
-      render 'edit'
+      redirect_to :action => :edit, :id => @article.id
     else
       flash[:warning] = "Failed to merge."
       redirect_to :back

@@ -416,8 +416,7 @@ class Article < Content
     user.admin? || user_id == user.id
   end
 
-def merge_with(merge_id)
-    merge_article = Article.find(merge_id)
+def merge_with(merge_article)
     merge_article.comments.each do |c|
       c.content = self
       c.save
