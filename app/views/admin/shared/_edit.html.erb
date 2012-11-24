@@ -4,9 +4,9 @@
   <%= render :partial => "form" %>
 <% end %>
 
-<%= form_tag(:action => :merge, :id => "merge_form", :method => :put ) do %>
+<%= form_tag({:action => :merge, :id => @article.id}, :method => :put ) do %>
   <h4><%= _("Merge Articles") %></h4>
-  <label for="merge_article_id"><%= _("Article id:") %></label>
-  <%= number_field_tag :merge_form, :id %>
+  <label for="merge_article_id"><%= _("Article ID:") %></label>
+  <%= number_field_tag :merge_article_id %>
   <%= submit_tag "Merge" %>
 <% end %>
