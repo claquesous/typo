@@ -6,7 +6,7 @@
 
 <%= form_tag({:action => :merge, :id => @article.id}, :method => :put ) do %>
   <h4><%= _("Merge Articles") %></h4>
-  <label for="merge_article_id"><%= _("Article ID:") %></label>
-  <%= number_field_tag :merge_article_id %>
+  <label for="merge_with"><%= _("Article ID:") %></label>
+  <%= number_field_tag :merge_with %>
   <%= submit_tag "Merge" %>
 <% end %>

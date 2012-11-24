@@ -115,7 +115,7 @@ class Admin::ContentController < Admin::BaseController
 
   def merge
     @article = Article.find(params[:id])
-    if @article.merge_with(params[:merge_article_id])
+    if @article.merge_with(params[:merge_with])
       flash[:notice] = "Merged articles."
       render 'edit'
     else
