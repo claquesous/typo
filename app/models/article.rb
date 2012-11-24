@@ -418,7 +418,7 @@ class Article < Content
 
 def merge_with(merge_article)
     merge_article.comments.each do |c|
-      c.content = self
+      c.article = self
       c.save
     end
     self.body += merge_article.body
